@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <h4>Timer</h4>
+        <p id="demo"></p>
+        <button onclick="setInterval(myTimer1)">Start</button>
+        <button onclick="clearInterval(myTimer)">Stop</button>
+        <script>
+            var myTimer= setInterval(myClock,1000);
+            var myTimer1 =setInterval(myClock1,1000);
+            function myClock(){
+                document.getElementById("demo").innerHTML= new Date().toLocaleTimeString();
+            }
+            function myClock1(){
+                document.getElementById("demo").innerHTML= new Date().toLocaleTimeString();
+            }
+        </script>
+    </body>
+</html>

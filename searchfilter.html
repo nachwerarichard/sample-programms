@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <hedaer></hedaer>
+    <body>
+        <input type="text" id="searchInput" placeholder="Search">
+<table id="table1">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+    </tr>
+    <!-- More rows -->
+  </tbody>
+</table>
+<input type="text" id="searchInput" placeholder="Search">
+
+<table id="table2">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+    </tr>
+    <!-- More rows -->
+  </tbody>
+</table>
+<script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+  var searchText = this.value.toLowerCase();
+  var table1 = document.getElementById('table1');
+  var table2 = document.getElementById('table2');
+  var rows1 = table1.getElementsByTagName('tr');
+  var rows2 = table2.getElementsByTagName('tr');
+
+  for (var i = 0; i < rows1.length; i++) {
+    var rowData1 = rows1[i].innerText.toLowerCase();
+    var rowData2 = rows2[i].innerText.toLowerCase();
+    if (rowData1.indexOf(searchText) === -1 && rowData2.indexOf(searchText) === -1) {
+      rows1[i].style.display = 'none';
+      rows2[i].style.display = 'none';
+    } else {
+      rows1[i].style.display = '';
+      rows2[i].style.display = '';
+    }
+  }
+});
+
+</script>
+
+    </body>
+    <footer>
+
+    </footer>
+</html>

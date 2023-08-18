@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <header></header>
+    <body>
+        <input type="text" id="searchInputTable1" placeholder="Search Table 1">
+<table id="table1">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+    </tr>
+    <!-- More rows -->
+  </tbody>
+</table>
+
+<input type="text" id="searchInputTable2" placeholder="Search Table 2">
+<table id="table2">
+  <thead>
+    <tr>
+      <th>Column 1</th>
+      <th>Column 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+    </tr>
+    <!-- More rows -->
+  </tbody>
+</table>
+<script>
+    function filterTable(tableId, inputId) {
+  var searchText = document.getElementById(inputId).value.toLowerCase();
+  var table = document.getElementById(tableId);
+  var rows = table.getElementsByTagName('tr');
+
+  for (var i = 0; i < rows.length; i++) {
+    var rowData = rows[i].innerText.toLowerCase();
+    if (rowData.indexOf(searchText) === -1) {
+      rows[i].style.display = 'none';
+    } else {
+      rows[i].style.display = '';
+    }
+  }
+}
+
+document.getElementById('searchInputTable1').addEventListener('input', function() {
+  filterTable('table1', 'searchInputTable1');
+});
+
+document.getElementById('searchInputTable2').addEventListener('input', function() {
+  filterTable('table2', 'searchInputTable2');
+});
+
+</script>
+    </body>
+    <footer></footer>
+</html>

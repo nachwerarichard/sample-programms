@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <form id="demo" action="richy.php">
+            First Name:<input type="text" name="fname">
+            Email:<input type="email" name="email">
+            <input type="Submit" value="Submit">
+            <button onclick="myFunction()">Click Me</button>
+        </form>
+        <p id="demo1"></p>
+        <script>
+           function myFunction(){
+            var x= document.getElementById("demo").method;
+            document.getElementById("demo1").innerHTML=x;
+           }
+        </script>
+    </body>
+</html>

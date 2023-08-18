@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <div></div>
+        <p>Inline javascript</p>
+        <button onclick="this.innerHTML=Date();">click me</button>
+        <button onclick="document.getElementById('demo').innerHTML=Date();">Click Me</button>
+        <p id="demo"></p>
+        <div>
+            <h3>Form submission</h3>
+            <form action="submit.php" id="demo">
+                First Name:<input type="text" name="fname"/>
+                Email: <input type="email" name="email"/>
+                <button onclick="myFunction()" value="Submit">Submit</button>
+            </form>
+        </div>
+        <script>
+            function myFunction(){
+                document.getElementById("demo").innerHTML.submit();
+            }
+        </script>
+    </body>
+</html>
